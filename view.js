@@ -20,19 +20,25 @@ let view = {
 view.displayMessage("Halo, zaczynamy ;)");
 
 
+/*
+                                    MODEL
+miejsce w którym będzie przechowywane stan gry oraz logika związana ze zmianami stanu
 
 
+ten model będzie zawierał:
+boardSize - wielkość siatki tworzącej plansze
+numShips - liczbę okrętów biorących udział w grze
+ships - informacje o lokalizacji okrętów i trafieniach
+shipsSunk - liczbę zatopionych okrętów
+shipsLength - liczbę komórek siatki zajmowanyhch orzez kazdy okret
+fire - metoda sluzoaca do oddawania strzalu i okreslania czy jest to strzal celny czy tez nie
 
-
-
-
-let rand1= Math.floor(Math.random()*location.length);
-let rand2= Math.floor(Math.random()*location.length);
-let rand3= Math.floor(Math.random()*location.length);
+ */
 
 let ship1 = {
-    locations: [rand1, rand2, rand3],
-}
+  locations: ["10", "20", "30"],
+  hits: ["", "", ""]   // zawiera informacje czy poszczególne pola zajmowane przez okręt zostały trafione czy nie
+};
 
 let ship2 = {
     locations: ["32", "33", "34"],
@@ -46,6 +52,10 @@ let ship3 = {
 
 const ships = [ship1, ship2, ship3];
 
+// // przykład ;)
+// ship2 = ships[1];
+// let locations = ship2.locations;
+// console.log("Wspólrzędne pola to: " + locations[1]);
 
 
 let model = {
@@ -54,6 +64,7 @@ let model = {
     shipLength: 3,
     shipsSunk: 0,
 
+    // ships: [ship1, ship2, ship3],
     ships: ships,
 
     fire: function (guess) {
@@ -91,7 +102,8 @@ let model = {
 };
 
 
-
+// guesses - przechowuje liczbę prób
+// processGuess - przetwarza wspólrzędne pola wskazanego przez użytkownnika i przekazuje je do modelu; wykrywa kobiec gry
 
 
 //                                      KONTROLER
@@ -133,8 +145,6 @@ function parseGuess(guess) {
     }
     return null;
 }
-
-
 
 
 //              POBIERANIE WSPÓŁRZĘDNYCH Z FORMULARZA:
