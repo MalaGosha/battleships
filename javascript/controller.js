@@ -58,6 +58,8 @@ function init() {
     fireButton.onclick = handleFireButton;
     let guessInput = document.getElementById("guessInput");
     guessInput.onkeypress = handleKeyPress;
+
+    model.generateShipLocation();
 }
 
 function handleKeyPress(e) {
@@ -67,6 +69,8 @@ function handleKeyPress(e) {
         return false;
     }
 }
+
+
 
 window.onload = init;
 

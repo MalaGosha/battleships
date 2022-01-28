@@ -14,17 +14,17 @@ fire - metoda sluzoaca do oddawania strzalu i okreslania czy jest to strzal celn
  */
 
 let ship1 = {
-    locations: ["10", "20", "30"],
+    locations: [0, 0, 0],
     hits: ["", "", ""]   // zawiera informacje czy poszczególne pola zajmowane przez okręt zostały trafione czy nie
 };
 
 let ship2 = {
-    locations: ["32", "33", "34"],
+    locations: [0, 0, 0],
     hits: ["", "", ""]
 }
 
 let ship3 = {
-    locations: ["63", "64", "65"],
+    locations: [0, 0, 0],
     hits: ["", "", ""]
 }
 
@@ -38,11 +38,10 @@ const ships = [ship1, ship2, ship3];
 
 var model = {
     boardSize: 7,
-    numShips: ships.length,
+    numShips: 3,
     shipLength: 3,
     shipsSunk: 0,
 
-    // ships: [ship1, ship2, ship3],
     ships: ships,
 
     fire: function (guess) {
@@ -75,7 +74,52 @@ var model = {
             }
             return true;
         }
+    },
+
+    generateShipLocation: function () {       // tworzy nowe okręty
+        let locations;
+        for (let i = 0; i < this.numShips; i++) {
+            do {
+                locations = this.generateShip();
+            } while (this.collision(locations));
+            this.ships[i].locations = locations;
+        }
+    },
+
+    generateShip: function () {          // zawiera tablice z nowymi wspołrzędnymi  pol zajmowanych przez 1 okret
+        let direction = Math.floor(Math.random() * 2);
+        let row, col;
+        if (direction === 1) {
+            row = Math.floor(Math.random() * this.boardSize);
+            col = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+        } else {
+            row = Math.floor(Math.random() * (this.boardSize - this.shipLength));
+            col = Math.floor(Math.random() * this.boardSize);
+        }
+
+        let newShipLocations = [];
+        for (let i = 0; i < this.shipLength; i++) {
+            if (direction === 1) {
+                newShipLocations.push(row + "" + (col+(i)));
+            } else {
+                newShipLocations.push((row + (i)) + "" + col);
+            }
+        }
+        return newShipLocations;
+    },
+
+    collision: function (locations){
+        for (let i = 0  ; i <this.numShips; i++){
+            let ship = model.ships[i];
+            for (let j = 0; j < locations.length; j++) {
+                if (ship.locations.indexOf(locations[j]) >= 0){
+                    return true;
+                }
+            }
+        }
+        return false;
     }
+
 
 };
 
