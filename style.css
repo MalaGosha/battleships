@@ -5,7 +5,7 @@ html {
 }
 
 body{
-    background-color: black;
+    background: url("img/1750488.jpg");
 }
 
 #board{
@@ -13,16 +13,95 @@ body{
     width: 1024px;
     height: 863px;
     margin: auto;
-    background: url("img/board.jpg");
 }
 
 #messageArea{
     position: fixed;
     top: 0px;
     left: 0px;
-    color: rgb(83,175,19);
+    color: rgb(6, 59, 97);
     font-size: 40px;
+    animation: obracanie 3s alternate;
 }
+
+@keyframes obracanie {
+    from {
+        transform: rotate(0deg);
+        margin-left: 300px;
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#changeType{
+    position: fixed;
+    font-size: 19px;
+    bottom: 340px;
+    left: 30px;
+    color: rgb(6, 59, 97);
+}
+
+.switch {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(14px);
+    -ms-transform: translateX(14px);
+    transform: translateX(14px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
 
 table{
     position: absolute;
@@ -34,28 +113,65 @@ table{
 td{
     width: 94px;
     height: 94px;
+    border: 1px solid rgba(41, 64, 210, 0.89);
+
+}
+
+#ships{
+    background: url("img/pngegg (1).png");
+}
+
+tr.numbers{
+    border: none;
+    font-size: 40px;
+    color: rgba(41, 64, 210, 0.89);
+    text-align: center;
+}
+
+td.letter{
+    font-size: 40px;
+    color: rgba(41, 64, 210, 0.89);
+    text-align: center;
 }
 
 form{
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
+    position: fixed;
+    top: 320px;
+    left: 0px;
     padding: 15px;
-    background-color: rgb(83,175,19);
+    background: radial-gradient(ellipse at center, rgba(147, 206, 222, 0.8) 0%, rgba(124, 189, 207, 0.8) 25%, rgba(73, 165, 191, 0.8) 82%, rgba(73, 165, 191, 0.8) 100%);
+    border-left: 1px solid #cccc;
+    border-bottom: 1px solid #cccc;
+    text-align: center;
+    transition: 0.2s;
+    border-radius: 6px;
 }
 
 form input{
-    background-color: rgb(152,207,113);
-    border-color: rgb(83,175,19);
-    font-size: 1em;
+    background: radial-gradient(ellipse at center, rgba(147, 206, 222, 0.8) 0%, rgba(124, 189, 207, 0.8) 25%, rgba(73, 165, 191, 0.8) 82%, rgba(73, 165, 191, 0.8) 100%);
+    border-color:  rgba(147, 206, 222, 0.8);
+    border-radius: 6px;
+    height: 40px;
+}
+
+#guessInput{
+    width: 120px;
+    font-size: 13px;
+    height: 25px;
+}
+
+#fireButton{
+    width: 70px;
+    font-size: 16px;
+    height: 25px;
 }
 
 .hit{
-    background: url("img/ship.png") no-repeat center center;
+    background: url("img/pngegg (2).png") no-repeat center center;
 }
 
 .miss{
-    background: url("img/miss.png") no-repeat center center;
+    background: url("img/pngegg (3).png") no-repeat center center;
 }
 
 
