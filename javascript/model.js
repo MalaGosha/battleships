@@ -45,11 +45,18 @@ var model = {
     ships: ships,
 
     fire: function (guess) {
-        // for (let i = 0; i < this.numShips; i++) {
+        if (!view.didUserShotThisElementByLocation(guess)) {
+
+            this.hitOrMiss(guess);
+
+        } else {
+            view.displayMessage("Już próbowałeś strzelić w te pole");
+        }
+    },
+
+    hitOrMiss: function (guess){
         for (let i = 0; i < this.ships.length; i++) {
             let ship = this.ships[i];
-            // let locations = ship.locations;
-            // let index = locations.indexOf(guess);
             let index = ship.locations.indexOf(guess); // mówi o tym że do indexu dopsiujemy numer indeksu pod ktorym znajduje sie nazwa wpisana przez użytkownika w danej lokacji w danym statkul; gdy jest false indexOf zwraca -1
             if (index >= 0) {
                 ship.hits[index] = "hit";
@@ -67,13 +74,16 @@ var model = {
         return false;
     },
 
-    isSunk: function (ship) {    // funcksja sprawdzająca czy okręt został zatopiony
-        for (let i = 0; i < this.shipLength; i++) {
-            if (ship.hits[i] !== "hit") {
-                return false;
+
+    isSunk: function (ship) {    // funkcja sprawdzająca czy okręt został zatopiony
+        let counter = 0;   // mówi ile razy statek został trafiony
+        for (let i = 0; i < ship.hits.length; i++){
+            if (ship.hits[i] === "hit"){
+                counter+=1;
             }
-            return true;
         }
+        console.log("counter" + counter);
+        return counter === this.shipLength; // zwraca true lub false
     },
 
     generateShipLocation: function () {       // tworzy nowe okręty
@@ -100,7 +110,7 @@ var model = {
         let newShipLocations = [];
         for (let i = 0; i < this.shipLength; i++) {
             if (direction === 1) {
-                newShipLocations.push(row + "" + (col+(i)));
+                newShipLocations.push(row + "" + (col + (i)));
             } else {
                 newShipLocations.push((row + (i)) + "" + col);
             }
@@ -108,11 +118,11 @@ var model = {
         return newShipLocations;
     },
 
-    collision: function (locations){
-        for (let i = 0  ; i <this.numShips; i++){
+    collision: function (locations) {
+        for (let i = 0; i < this.numShips; i++) {
             let ship = model.ships[i];
             for (let j = 0; j < locations.length; j++) {
-                if (ship.locations.indexOf(locations[j]) >= 0){
+                if (ship.locations.indexOf(locations[j]) >= 0) {
                     return true;
                 }
             }

@@ -12,7 +12,9 @@ var controller = {          // implementacja kontrolera
         let location = parseGuess(guess);
         if (location) {
             this.guesess++;
+            console.log("@Liczba prób to: " + this.guesess);
             var hit = model.fire(location);
+            console.log("@weynik uderzenia z model.fire(location)" + hit);
             if (hit && model.shipsSunk === model.numShips) {
                 view.displayMessage("Zatopiłeś wszystkie okręty z planszy w " + this.guesess + " próbach");
             }
@@ -64,7 +66,7 @@ function init() {
 
 function handleKeyPress(e) {
     let fireButton = document.getElementById("fireButton");
-    if (e.keyCode === 13) {
+    if (e.keyCode === 13) {      // 13 to keycode na klawisz enter
         fireButton.click();
         return false;
     }

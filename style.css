@@ -17,10 +17,11 @@ body{
 }
 
 #messageArea{
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     color: rgb(83,175,19);
+    font-size: 40px;
 }
 
 table{
