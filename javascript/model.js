@@ -37,7 +37,7 @@ const ships = [ship1, ship2, ship3];
 
 
 var model = {
-    boardSize: 7,
+    boardSize: 8,
     numShips: 3,
     shipLength: 3,
     shipsSunk: 0,
