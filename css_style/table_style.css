@@ -1,0 +1,42 @@
+table{
+    position: absolute;
+    left: 173px;
+    top: 98px;
+    border-spacing: 0px;
+    background: radial-gradient(ellipse at center, rgba(232,232,232,0.27) 0%, rgba(232,232,232,1) 0%, rgba(232,232,232,0.17) 9%, rgba(232,232,232,0.47) 49%, rgba(255,255,255,0.73) 83%, rgba(255,255,255,0.84) 98%);
+}
+
+td{
+    width: 94px;
+    height: 94px;
+    border: 2px solid rgba(41, 64, 210, 0.89);
+}
+
+#ships{
+    background: url("../img/game_ship.png");
+}
+
+tr.numbers{
+    border: none;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgba(41, 64, 210, 0.89);
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(87, 108, 234, 0.89);
+}
+
+td.letter{
+    font-size: 40px;
+    color: rgba(41, 64, 210, 0.89);
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(87, 108, 234, 0.89);
+}
+
+.hit{
+    background: url("../img/sun_ship.png") no-repeat center center;
+}
+
+.miss{
+    background: url("../img/sun_buum.png") no-repeat center center;
+}

@@ -9,12 +9,29 @@
     <script src="javascript/model.js" async></script>
     <script src="javascript/controller.js" async></script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css_style/main_style.css">
+    <link rel="stylesheet" href="css_style/table_style.css">
+    <link rel="stylesheet" href="css_style/text_style.css">
 </head>
 
 <body>
+<div id="messageArea"></div>
+
+<div id="placeWithWriteLocation">
+    <form>
+        <input type="text" id="guessInput" placeholder="Wpisz współrzędne">
+        <input type="button" id="fireButton" value="Ognia!">
+    </form>
+    <div id="changeType"> Wyłącz ręczne <br>wpisywanie wspólrzędnych
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
+
 <div id="board">
-    <div id="messageArea"></div>
+
     <table id="background_table">
         <tr class="numbers">
             <td id="ships"></td>
@@ -97,22 +114,12 @@
             <td id="67">
         </tr>
     </table>
-    <div id="write_location">
-        <form>
-            <input type="text" id="guessInput" placeholder="Wpisz współrzędne">
-            <input type="button" id="fireButton" value="Ognia!">
-        </form>
-        <div id="changeType"> Wyłącz ręczne <br>wpisywanie wspólrzędnych
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </div>
-    <div id="emoji">
-        <span id="light_mode"><img src="img/sun_emoji.png"></span>
-        <span id="dark_mode"><img src="img/night_emoji.png"></span>
-    </div>
+
+</div>
+<div id="emoji">
+    <span id="light_mode"><img src="img/sun_emoji.png"></span>
+    <span id="dark_mode"><img src="img/night_emoji.png"></span>
+</div>
 </div>
 
 
