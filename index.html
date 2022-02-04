@@ -8,16 +8,18 @@
     <script src="javascript/view.js" async></script>
     <script src="javascript/model.js" async></script>
     <script src="javascript/controller.js" async></script>
+    <script src="javascript/setMode.js" async></script>
 
-    <link rel="stylesheet" href="css_style/main_style.css">
-    <link rel="stylesheet" href="css_style/table_style.css">
-    <link rel="stylesheet" href="css_style/text_style.css">
+    <link rel="stylesheet" href="css_style/main_style_light.css">
+    <link rel="stylesheet" href="css_style/table_style_light.css">
+    <link rel="stylesheet" href="css_style/text_style_light.css">
+
 </head>
 
 <body>
 <div id="messageArea"></div>
 
-<div id="placeWithWriteLocation">
+<div class="placeWithWriteLocation">
     <form>
         <input type="text" id="guessInput" placeholder="Wpisz współrzędne">
         <input type="button" id="fireButton" value="Ognia!">
@@ -120,6 +122,10 @@
     <span id="light_mode"><img src="img/sun_emoji.png"></span>
     <span id="dark_mode"><img src="img/night_emoji.png"></span>
 </div>
+
+<div id="flag">
+    <span id="poland_flag"><img src="img/poland_flag.png"></span>
+    <span id="britian_flag"><img src="img/britian_flag.png"></span>
 </div>
 
 

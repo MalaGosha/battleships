@@ -1,15 +1,15 @@
-table{
+table {
     position: absolute;
     left: 173px;
     top: 98px;
     border-spacing: 0px;
-    background: radial-gradient(ellipse at center, rgba(232,232,232,0.27) 0%, rgba(232,232,232,1) 0%, rgba(232,232,232,0.17) 9%, rgba(232,232,232,0.47) 49%, rgba(255,255,255,0.73) 83%, rgba(255,255,255,0.84) 98%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 25%, rgba(181, 184, 187, 1) 93%);
 }
 
 td{
     width: 94px;
     height: 94px;
-    border: 2px solid rgba(41, 64, 210, 0.89);
+    border: 2px solid rgba(98, 118, 248, 0.89);
 }
 
 #ships{
@@ -34,7 +34,7 @@ td.letter{
 }
 
 .hit{
-    background: url("../img/sun_ship.png") no-repeat center center;
+    background: url("../img/dark_ship.png") no-repeat center center;
 }
 
 .miss{

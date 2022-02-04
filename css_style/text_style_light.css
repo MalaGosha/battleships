@@ -7,21 +7,21 @@
     font-size: 40px;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(87, 108, 234, 0.89);
+    width: 340px;
 }
 
 
-#placeWithWriteLocation{
+.placeWithWriteLocation{
     position: fixed;
     width: 330px;
     margin-top: 180px;
-    padding: 10px;
+    padding: 13px;
     border-radius: 6px;
-    background: radial-gradient(ellipse at center, rgba(232,232,232,0.27) 0%, rgba(232,232,232,1) 0%, rgba(232,232,232,0.17) 9%, rgba(232,232,232,0.47) 49%, rgba(255,255,255,0.73) 83%, rgba(255,255,255,0.84) 98%);
+    background: radial-gradient(circle, rgba(255,255,255,0) 25%, rgba(231,234,237,1) 93%);
 }
 
 
 form{
-
     text-align: center;
 }
 
@@ -30,24 +30,63 @@ form input{
     border-color:  rgba(147, 206, 222, 0.8);
     border-radius: 6px;
     height: 40px;
+    padding: 6px;
 }
 
 #guessInput{
+    font-size: 18px;
+    text-align: center;
     width: 120px;
-    font-size: 13px;
-    height: 25px;
+    box-shadow: 0px 3px 5px 0px rgb(88, 96, 135), 0px 3px 6px rgba(0, 0, 0, 0.9);
+    opacity: 0.8;
+    transition: 0.2s;
+    transform: rotateX(20deg);
 }
+
+#guessInput:hover{
+    opacity: 1;
+    transform: rotateX(10deg);
+}
+
+#guessInput:active{
+    box-shadow: 0px 3px 5px 0px rgb(88, 96, 135), 0px 3px 6px rgba(0, 0, 0, 0.9);
+    position: relative;
+}
+
+::placeholder {
+    color: #262626;
+    text-align: center;
+    font-size: 12px;
+}
+
 
 #fireButton{
     width: 70px;
     font-size: 16px;
-    height: 25px;
+    height: 35px;
+    text-align: center;
+    opacity: 0.8;
+    transition: 0.2s;
+    transform: rotateX(20deg);
+    box-shadow: 0px 3px 5px 0px rgb(88, 96, 135), 0px 3px 6px rgba(0, 0, 0, 0.9);
+}
+
+#fireButton:hover {
+    opacity: 1;
+    transform: rotateX(10deg);
+}
+
+#fireButton:active {
+    box-shadow: 0px 3px 5px 0px rgb(88, 96, 135), 0px 3px 6px rgba(0, 0, 0, 0.9);
+    position: relative;
+    top: 3px;
 }
 
 
 #changeType{
     font-size: 19px;
     padding: 15px;
+    margin-top: 15px;
     color: rgba(41, 64, 210, 0.89);
     font-weight: bold;
 }

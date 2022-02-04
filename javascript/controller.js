@@ -56,7 +56,7 @@ function handleFireButton() {
 }
 
 function init() {
-    var fireButton = document.getElementById("fireButton");
+    let fireButton = document.getElementById("fireButton");
     fireButton.onclick = handleFireButton;
     let guessInput = document.getElementById("guessInput");
     guessInput.onkeypress = handleKeyPress;
