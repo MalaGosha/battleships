@@ -5,10 +5,12 @@
     <meta charset="utf-8">
     <title>Battelships</title>
 
-    <script src="javascript/view.js" async></script>
     <script src="javascript/model.js" async></script>
     <script src="javascript/controller.js" async></script>
+    <script src="javascript/view.js" async></script>
     <script src="javascript/setMode.js" async></script>
+    <script src="javascript/language_version.js" async></script>
+    <script src="javascript/dictionaryMap.js" async></script>
 
     <link rel="stylesheet" href="css_style/main_style_light.css">
     <link rel="stylesheet" href="css_style/table_style_light.css">
@@ -24,7 +26,7 @@
         <input type="text" id="guessInput" placeholder="Wpisz współrzędne">
         <input type="button" id="fireButton" value="Ognia!">
     </form>
-    <div id="changeType"> Wyłącz ręczne <br>wpisywanie wspólrzędnych
+    <div id="changeType"> Włącz wybieranie cursorem
         <label class="switch">
             <input type="checkbox">
             <span class="slider round"></span>
@@ -128,6 +130,11 @@
     <span id="britian_flag"><img src="img/britian_flag.png"></span>
 </div>
 
+
+<div class="popup">
+    <button class="closePopup">X</button>
+    <p class="messagePopup"></p>
+</div>
 
 </body>
 

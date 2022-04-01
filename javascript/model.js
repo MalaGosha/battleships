@@ -13,6 +13,22 @@ fire - metoda sluzoaca do oddawania strzalu i okreslania czy jest to strzal celn
 
  */
 
+class Shipss2 {
+    constructor(locations, hits) {
+        this.locations = locations;
+        this.hits = hits;
+    }
+    locations;
+    hits;
+}
+
+let ship1 = new Shipss2 ([], "", "", "");
+let ship2 = new Shipss2 ([], "", "", "");
+let ship3= new Shipss2 ([], "", "", "");
+
+
+
+/*
 let ship1 = {
     locations: [0, 0, 0],
     hits: ["", "", ""]   // zawiera informacje czy poszczególne pola zajmowane przez okręt zostały trafione czy nie
@@ -27,6 +43,8 @@ let ship3 = {
     locations: [0, 0, 0],
     hits: ["", "", ""]
 }
+
+*/
 
 const ships = [ship1, ship2, ship3];
 
@@ -45,12 +63,13 @@ var model = {
     ships: ships,
 
     fire: function (guess) {
+
         if (!view.didUserShotThisElementByLocation(guess)) {
 
             this.hitOrMiss(guess);
 
         } else {
-            view.displayMessage("Już próbowałeś strzelić w te pole");
+            view.displayMessage(language === "PL" ? "Już próbowałeś strzelić w te pole" : "You try this location");
         }
     },
 
@@ -61,16 +80,16 @@ var model = {
             if (index >= 0) {
                 ship.hits[index] = "hit";
                 view.displayHit(guess);
-                view.displayMessage("Trafiony!");
+                view.displayMessage(language === "PL" ? "Trafiony!" : "Wow! This is hit!");
                 if (this.isSunk(ship)) {
-                    view.displayMessage("Zatopiłeś mój okręt");
+                    view.displayMessage(language === "PL" ? "Zatopiłeś mój okręt" : "Grrrr...! You sunk my ship!");
                     this.shipsSunk++;
                 }
                 return true;
             }
         }
         view.displayMiss(guess);
-        view.displayMessage("Spudłowałeś");
+        view.displayMessage(language==="PL" ? "Spudłowałeś" : "Miss");
         return false;
     },
 
@@ -129,6 +148,7 @@ var model = {
         }
         return false;
     }
+
 
 
 };

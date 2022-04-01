@@ -25,7 +25,25 @@ var view = {
 
 }
 
-view.displayMessage("Halo, zaczynamy ;)");
+view.displayMessage(language === "PL" ? "Halo, zaczynamy ;)" : "Hi! Let's play ;)");
+
+
+const popUp = document.querySelector('.popup');
+const messagePopup = document.querySelector('.messagePopup');
+const closePopup = document.querySelector('.closePopup');
+
+const showPopup = (originMessage) => {
+    closePopup.style.display = 'block';
+    popUp.style.display = 'block';
+    messagePopup.textContent = originMessage;
+}
+
+closePopup.onclick = function(event){
+    if (event.target === closePopup) {
+        popUp.style.display = "none";
+    }
+};
+
 
 
 

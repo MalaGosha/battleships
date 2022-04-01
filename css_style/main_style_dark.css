@@ -9,7 +9,9 @@ body{
 }
 
 #board{
-    position: relative;
+    position: absolute;
+    top: 30px;
+    left: 280px;
     width: 1024px;
     height: 863px;
     margin: auto;
@@ -27,3 +29,52 @@ body{
     top: 100px;
 }
 
+#light_mode, #dark_mode, #poland_flag, #britian_flag{
+    cursor: pointer;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    width: 400px;
+    height: 250px;
+    background-color: #a6b3e3;
+    opacity: 0.95;
+    transition: 0.2s;
+    transform: rotateX(20deg);
+    box-shadow: 0px 3px 5px 0px rgb(88, 96, 135), 0px 3px 6px rgba(0, 0, 0, 0.9);
+    border-radius: 7px;
+}
+
+.messagePopup {
+    text-align: center;
+    padding: 80px 10px;
+    font-size: 26px;
+    font-weight: bold;
+    color: rgba(11,9,163,0.89);
+}
+
+.closePopup {
+    display: block;
+    float: right;
+    padding: 10px;
+    background-color: rgba(17, 15, 191, 0.89);
+    opacity: 0.6;
+    border-radius: 0px 7px 0px 7px;
+    box-shadow: 0px 3px 5px 0px rgba(24, 21, 142, 0.89), 0px 9px 10px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.closePopup:hover {
+    display: block;
+    float: right;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgba(11, 9, 163, 0.89);
+    opacity: 0.8;
+    border-radius: 0px 7px 0px 7px;
+    box-shadow: 0px 3px 5px 0px rgba(9, 8, 95, 0.89), 0px 9px 10px rgba(0, 0, 0, 0.7);
+}
