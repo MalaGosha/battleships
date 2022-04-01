@@ -54,7 +54,7 @@ function parseGuess(guess) {
 //              POBIERANIE WSPÓŁRZĘDNYCH Z FORMULARZA:
 function handleFireButton() {
     let guessInput = document.getElementById("guessInput");
-    let guess = guessInput.value;
+    let guess = guessInput.value.toUpperCase();
     controller.processGuess(guess);
 
     guessInput.value = "";
@@ -79,10 +79,6 @@ function handleKeyPress(e) {
 
 // const letter = document.querySelector('.letter');
 // letterNodeReference.childNodes[0].nodeName.
-
-
-// popup
-
 
 
 window.onload = init;
