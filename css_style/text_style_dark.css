@@ -90,6 +90,7 @@ form input{
     margin-top: 15px;
     color: rgba(4, 12, 57, 0.89);
     font-weight: bold;
+    display: inline-block;
 }
 
 .changeType{
