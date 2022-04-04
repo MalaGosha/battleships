@@ -12,7 +12,7 @@ var view = {
     },
 
     displayMiss: function (location) {
-        let cell = document.getElementById(location);     /// JEST O LOKACJA PRZEKAZA PRZEZ UŻYTKOWNIKA I JUŻ PRZEKONWERTOWANA NA SAME LICZBY
+        let cell = document.getElementById(location);     /// JEST TO LOKACJA PRZEKAZA PRZEZ UŻYTKOWNIKA I JUŻ PRZEKONWERTOWANA NA SAME LICZBY
         cell.setAttribute("class", "miss");
     },
 

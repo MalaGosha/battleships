@@ -84,7 +84,7 @@ form input{
 }
 
 
-#changeType{
+#changeTypeText{
     font-size: 19px;
     padding: 15px;
     margin-top: 15px;
@@ -92,6 +92,9 @@ form input{
     font-weight: bold;
 }
 
+.changeType{
+    display: inline-block;
+}
 
 .switch {
     position: relative;
